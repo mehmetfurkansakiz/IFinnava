@@ -16,6 +16,8 @@
 		0F3B09542C5195E0008D622F /* IFinnavaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B09532C5195E0008D622F /* IFinnavaTests.swift */; };
 		0F3B095E2C5195E0008D622F /* IFinnavaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B095D2C5195E0008D622F /* IFinnavaUITests.swift */; };
 		0F3B09602C5195E0008D622F /* IFinnavaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B095F2C5195E0008D622F /* IFinnavaUITestsLaunchTests.swift */; };
+		0F3B09762C519AAC008D622F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F3B09752C519AAC008D622F /* SnapKit */; };
+		0F3B09792C519EDC008D622F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B09782C519EDC008D622F /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		0F3B09592C5195E0008D622F /* IFinnavaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IFinnavaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3B095D2C5195E0008D622F /* IFinnavaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFinnavaUITests.swift; sourceTree = "<group>"; };
 		0F3B095F2C5195E0008D622F /* IFinnavaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFinnavaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0F3B09782C519EDC008D622F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3B09762C519AAC008D622F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +103,9 @@
 		0F3B093B2C5195DE008D622F /* IFinnava */ = {
 			isa = PBXGroup;
 			children = (
+				0F3B09702C5199F7008D622F /* data */,
+				0F3B096F2C5199EE008D622F /* helpers */,
+				0F3B096C2C519999008D622F /* ui */,
 				0F3B093C2C5195DE008D622F /* AppDelegate.swift */,
 				0F3B093E2C5195DE008D622F /* SceneDelegate.swift */,
 				0F3B09402C5195DE008D622F /* ViewController.swift */,
@@ -127,6 +134,68 @@
 			path = IFinnavaUITests;
 			sourceTree = "<group>";
 		};
+		0F3B096C2C519999008D622F /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				0F3B09732C519A6A008D622F /* cells */,
+				0F3B096E2C5199E4008D622F /* viewmodels */,
+				0F3B096D2C5199A3008D622F /* views */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		0F3B096D2C5199A3008D622F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				0F3B09782C519EDC008D622F /* LoginViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		0F3B096E2C5199E4008D622F /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		0F3B096F2C5199EE008D622F /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		0F3B09702C5199F7008D622F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				0F3B09722C519A11008D622F /* repo */,
+				0F3B09712C5199FB008D622F /* entity */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		0F3B09712C5199FB008D622F /* entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		0F3B09722C519A11008D622F /* repo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		0F3B09732C519A6A008D622F /* cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +212,9 @@
 			dependencies = (
 			);
 			name = IFinnava;
+			packageProductDependencies = (
+				0F3B09752C519AAC008D622F /* SnapKit */,
+			);
 			productName = IFinnava;
 			productReference = 0F3B09392C5195DE008D622F /* IFinnava.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +287,9 @@
 				Base,
 			);
 			mainGroup = 0F3B09302C5195DE008D622F;
+			packageReferences = (
+				0F3B09742C519AAC008D622F /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0F3B093A2C5195DE008D622F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3B09792C519EDC008D622F /* LoginViewController.swift in Sources */,
 				0F3B09412C5195DE008D622F /* ViewController.swift in Sources */,
 				0F3B093D2C5195DE008D622F /* AppDelegate.swift in Sources */,
 				0F3B093F2C5195DE008D622F /* SceneDelegate.swift in Sources */,
@@ -607,6 +683,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F3B09742C519AAC008D622F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F3B09752C519AAC008D622F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F3B09742C519AAC008D622F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0F3B09312C5195DE008D622F /* Project object */;
 }
