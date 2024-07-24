@@ -18,6 +18,7 @@
 		0F3B09602C5195E0008D622F /* IFinnavaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B095F2C5195E0008D622F /* IFinnavaUITestsLaunchTests.swift */; };
 		0F3B09762C519AAC008D622F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F3B09752C519AAC008D622F /* SnapKit */; };
 		0F3B09792C519EDC008D622F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B09782C519EDC008D622F /* LoginViewController.swift */; };
+		0F3B097B2C51AC7B008D622F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B097A2C51AC7B008D622F /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		0F3B095D2C5195E0008D622F /* IFinnavaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFinnavaUITests.swift; sourceTree = "<group>"; };
 		0F3B095F2C5195E0008D622F /* IFinnavaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFinnavaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0F3B09782C519EDC008D622F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0F3B097A2C51AC7B008D622F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				0F3B09782C519EDC008D622F /* LoginViewController.swift */,
+				0F3B097A2C51AC7B008D622F /* RegisterViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F3B09792C519EDC008D622F /* LoginViewController.swift in Sources */,
+				0F3B097B2C51AC7B008D622F /* RegisterViewController.swift in Sources */,
 				0F3B09412C5195DE008D622F /* ViewController.swift in Sources */,
 				0F3B093D2C5195DE008D622F /* AppDelegate.swift in Sources */,
 				0F3B093F2C5195DE008D622F /* SceneDelegate.swift in Sources */,

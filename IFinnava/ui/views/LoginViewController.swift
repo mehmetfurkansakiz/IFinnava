@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     private let passwordTextField: UITextField = .init()
     private let loginButton: UIButton = .init(type: .system)
     private let rememberMeButton: UIButton = .init(type: .system)
+    private let registerRedirectButton: UIButton = .init(type: .system)
     var isRememberMeChecked = false
 
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
         view.addSubview(rememberMeButton)
+        view.addSubview(registerRedirectButton)
 
         view.backgroundColor = .white
         
@@ -61,6 +63,12 @@ class LoginViewController: UIViewController {
         loginButton.backgroundColor = .black
         loginButton.layer.cornerRadius = 5
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
+        // Register Redirect Button
+           registerRedirectButton.setTitle("Don't have an account? Register", for: .normal)
+           registerRedirectButton.setTitleColor(.black, for: .normal)
+           registerRedirectButton.addTarget(self, action: #selector(registerRedirectButtonTapped), for: .touchUpInside)
+       
     }
 
     func setupConstraints() {
@@ -92,6 +100,11 @@ class LoginViewController: UIViewController {
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
+        
+        registerRedirectButton.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
+        }
     }
 
     @objc func loginButtonTapped() {
@@ -108,5 +121,11 @@ class LoginViewController: UIViewController {
         isRememberMeChecked.toggle()
         let checkboxTitle = isRememberMeChecked ? "Remember Me ☑️" : "Remember Me ☐"
         rememberMeButton.setTitle(checkboxTitle, for: .normal)
+    }
+    
+    @objc func registerRedirectButtonTapped() {
+        let registerViewController = RegisterViewController()
+        registerViewController.modalPresentationStyle = .fullScreen
+        present(registerViewController, animated: true, completion: nil)
     }
 }
