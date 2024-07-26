@@ -7,6 +7,7 @@
 
 import SnapKit
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
     private let titleLabel: UILabel = .init()
@@ -108,7 +109,29 @@ class RegisterViewController: UIViewController {
     }
 
     @objc func registerButtonTapped() {
-        print("register button tapped")
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        let rePassword = rePasswordTextField.text
+        
+        if email != "" && password != "" && rePassword != "" {
+            if password == rePassword {
+                Auth.auth().createUser(withEmail: email!, password: password!) { authResult, error in
+                    if let error = error {
+                            AlertHelper.basicAlert(title: "Error", message: error.localizedDescription, in: self)
+                        } else {
+                            print("User Registered. UID: \(authResult?.user.uid ?? "")")
+                            let homeViewController = HomeViewController()
+                            homeViewController.modalPresentationStyle = .fullScreen
+                            self.present(homeViewController, animated: true, completion: nil)
+                        }
+                }
+            } else {
+                AlertHelper.basicAlert(title: "Error", message: "Passwords do NOT match", in: self)
+                
+            }
+        } else {
+            AlertHelper.basicAlert(title: "Error", message: "Email/Password cannot be empty", in: self)
+        }
     }
     
     @objc func loginRedirectButtonTapped() {
