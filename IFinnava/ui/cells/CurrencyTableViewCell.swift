@@ -9,6 +9,7 @@ import UIKit
 
 class CurrencyTableViewCell: UITableViewCell {
     
+    
     private let fromCurrencyCodeLabel = UILabel()
     private let fromCurrencyNameLabel = UILabel()
     private let toCurrencyCodeLabel = UILabel()
@@ -23,33 +24,22 @@ class CurrencyTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        
-    }
     
     private func setupViews() {
-        fromCurrencyCodeLabel.font = UIFont.systemFont(ofSize: 12)
+        fromCurrencyCodeLabel.font = UIFont.systemFont(ofSize: 14)
         fromCurrencyCodeLabel.textColor = .gray
         
-        fromCurrencyNameLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        fromCurrencyNameLabel.font = UIFont.boldSystemFont(ofSize: 16)
         fromCurrencyNameLabel.textColor = .black
         
-        toCurrencyCodeLabel.font = UIFont.systemFont(ofSize: 12)
+        toCurrencyCodeLabel.font = UIFont.systemFont(ofSize: 14)
         toCurrencyCodeLabel.textColor = .gray
         
-        toCurrencyNameLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        toCurrencyNameLabel.font = UIFont.boldSystemFont(ofSize: 16)
         toCurrencyNameLabel.textColor = .black
         
-        exchangeRateLabel.font = UIFont.systemFont(ofSize: 14)
-        exchangeRateLabel.textColor = .green
+        exchangeRateLabel.font = UIFont.systemFont(ofSize: 18)
+        exchangeRateLabel.textColor = UIColor(red: 0.0, green: 0.6, blue: 0.0, alpha: 1.0) // Slightly darker green
         
         contentView.addSubview(fromCurrencyCodeLabel)
         contentView.addSubview(fromCurrencyNameLabel)
@@ -58,7 +48,8 @@ class CurrencyTableViewCell: UITableViewCell {
         contentView.addSubview(exchangeRateLabel)
         
         fromCurrencyCodeLabel.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(15)
+            make.top.equalToSuperview().offset(15)
         }
         
         fromCurrencyNameLabel.snp.makeConstraints { make in
@@ -68,7 +59,7 @@ class CurrencyTableViewCell: UITableViewCell {
         
         toCurrencyCodeLabel.snp.makeConstraints { make in
             make.leading.equalTo(fromCurrencyNameLabel.snp.trailing).offset(20)
-            make.centerY.equalTo(fromCurrencyCodeLabel)
+            make.top.equalTo(fromCurrencyCodeLabel)
         }
         
         toCurrencyNameLabel.snp.makeConstraints { make in
@@ -77,8 +68,17 @@ class CurrencyTableViewCell: UITableViewCell {
         }
         
         exchangeRateLabel.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(-10)
+            make.trailing.equalToSuperview().offset(-15)
             make.centerY.equalToSuperview()
+        }
+        
+        contentView.layer.borderColor = UIColor.gray.cgColor
+        contentView.layer.borderWidth = 1
+        contentView.layer.cornerRadius = 8
+        
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(10)
+            make.height.equalTo(100) // Adjust height as needed
         }
     }
     
@@ -87,7 +87,6 @@ class CurrencyTableViewCell: UITableViewCell {
         fromCurrencyNameLabel.text = currency.fromCurrencyName
         toCurrencyCodeLabel.text = currency.toCurrencyCode
         toCurrencyNameLabel.text = currency.toCurrencyName
-        exchangeRateLabel.text = String(currency.exchangeRate ?? 0.0)
+        exchangeRateLabel.text = String(format: "%.2f", currency.exchangeRate ?? 0.0)
     }
-
 }
